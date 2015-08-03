@@ -1,1 +1,45 @@
-<h2>Heroes main view</h2>
+<h2>Who are you playing against?</h2>
+
+<div class="container">
+
+<!--
+
+This is to show div when user presses the add hero button
+
+$('div:hidden').first().removeClass("hidden")
+
+-->
+
+<form class="" action="/heroes" method="post">
+  <div id="first-row" class="row">
+    <input class="col-md-9" list="heroes-list" name="one">
+      <input class="col-md-3" type="button" name="Add Hero" value="+"></input>
+  </div>
+  <div class="row hidden">
+    <input class="col-md-9" list="heroes-list" name="two">
+      <input class="col-md-3" type="button" name="Add Hero" value="+"></input>
+  </div>
+  <div id="third-row" class="row" display="none">
+    <input class="col-md-9" list="heroes-list" name="three">
+      <input class="col-md-3" type="button" name="Add Hero" value="+"></input>
+  </div>
+  <div id="fourth-row" class="row" display="none">
+    <input class="col-md-9" list="heroes-list" name="four">
+      <input class="col-md-3" type="button" name="Add Hero" value="+"></input>
+  </div>
+  <div id="fifth-row" class="row" display="none">
+    <input class="col-md-9" list="heroes-list" name="five">
+  </div>
+  <div class="row">
+  <input type="submit" value="Calculate">
+  </div>
+
+    <!-- Datalist begins here -->
+  <datalist id="heroes-list">
+    <option>option1</option>
+    <option>option2</option>
+    <option>option3</option>
+  </datalist>
+
+
+</div>
