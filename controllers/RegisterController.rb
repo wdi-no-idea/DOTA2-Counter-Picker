@@ -1,7 +1,7 @@
 class RegisterController < ApplicationController
 
   get '/' do
-    erb :register_index
+    erb :'registration_views/register_index'
   end
 
   post '/success' do
@@ -17,7 +17,7 @@ class RegisterController < ApplicationController
 
     @new_user.password_salt = password_salt
     @new_user.password_hash = password_hash
-    erb :register_success
+    erb :'registration_views/register_success'
   end
 
 end

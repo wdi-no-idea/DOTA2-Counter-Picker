@@ -12,7 +12,7 @@ class LoginController < ApplicationController
   end
 
   get '/' do
-    erb :login_index
+    erb :'login_views/login_index'
   end
 
   post '/' do
@@ -22,11 +22,11 @@ class LoginController < ApplicationController
       user = UsersModel.where(:user_name => user_name).first!
 
       if user.password_hash == BCrypt::Engine.hash_secret(params[:password], user.password_salt)
-        erb :login_success
+        erb :'login_views/login_success'
       end
     end
 
-    erb :login_fail
+    erb :'login_views/login_fail'
 
   end
 

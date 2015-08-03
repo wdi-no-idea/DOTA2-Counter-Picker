@@ -5,9 +5,5 @@ Dir.glob('./{controllers,models}/*.rb').each {
 }
 
 map ('/') {run HomeController}
-
-
-
 map ('/login') {run LoginController}
-
 map ('/register') {run RegisterController}
