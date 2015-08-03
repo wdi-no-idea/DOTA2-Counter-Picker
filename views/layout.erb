@@ -7,24 +7,29 @@
     <title>Dota 2 Counterpicker</title>
   </head>
   <body>
-    <header>
-      <h1>Dota 2 Counter Picker</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/login">Login</a></li>
-        </ul>
-      </nav>
+    <div class="container">
+
+      <header class="row">
+        <h1 class="col-md-6">Dota 2 Counter Picker</h1>
+        <nav class="col-md-6 .nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/heroes">Heroes</a></li>
+          </ul>
+        </nav>
+        <hr>
+      </header>
+
+      <%= yield %>
+
+      <footer>
       <hr>
-    </header>
+      <p>
+        All pictures and info are from Dotabuff.com and Valve.
+      </p>
+      </footer>
 
-    <%= yield %>
-
-    <footer>
-    <hr>
-    <p>
-      All pictures and info are from Dotabuff.com and Valve.
-    </p>
-    </footer>
+  </div> <!-- end container -->
   </body>
 </html>
