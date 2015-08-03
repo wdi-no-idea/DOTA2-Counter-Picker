@@ -2,7 +2,7 @@ class LoginController < ApplicationController
 
   def does_user_exist?(username)
 
-    user = UsersModel.findby(:user_name => username.to_s)
+    user = UsersModel.find_by(:user_name => username.to_s)
     if user
       return true
     else
@@ -22,12 +22,10 @@ class LoginController < ApplicationController
       user = UsersModel.where(:user_name => user_name).first!
 
       if user.password_hash == BCrypt::Engine.hash_secret(params[:password], user.password_salt)
-        erb :'login_views/login_success'
+        return erb :'login_views/login_success'
       end
     end
-
     erb :'login_views/login_fail'
-
   end
 
 

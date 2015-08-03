@@ -17,6 +17,7 @@ class RegisterController < ApplicationController
 
     @new_user.password_salt = password_salt
     @new_user.password_hash = password_hash
+    @new_user.save
     erb :'registration_views/register_success'
   end
 
