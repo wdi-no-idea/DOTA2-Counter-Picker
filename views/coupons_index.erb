@@ -1,0 +1,11 @@
+<h2>These are our coupons</h2>
+
+<ol>
+
+  <% @coupons.each do |coupon| %>
+  <li>
+    <%= coupon.title %> for <%= coupon.product %> has a discount of <%= coupon.discount %> to be used by <%= coupon.expiration_date %>
+  </li>
+
+  <% end %>
+</ol>
