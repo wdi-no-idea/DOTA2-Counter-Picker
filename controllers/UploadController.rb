@@ -1,53 +1,51 @@
 class UploadController < ApplicationController
 
   def uploadDota()
-
-    #
-    #
-    # heroes_doc = Nokogiri::HTML(open("http://dotabuff.com/heroes")) # this grabs the page.
-    # names_array = heroes_doc.xpath("//div[@class='name']/text()")
-    #
-    # names_array.each() do |hero|
-    #   @hcountermodel = HeroCountersModel.new
-    #   @hcountermodel.name = hero
-    #
-    #   # the whole function goes in here!
-    #
-    #   @hcountermodel.save
-    # end
-
-
- # test database
     HeroCountersModel.destroy_all()
-    @hcountermodel = HeroCountersModel.new
-    @hcountermodel.name = "abaddon"
 
 
+    heroes_doc = Nokogiri::HTML(open("http://dotabuff.com/heroes")) # this grabs the page.
+    names_array = heroes_doc.xpath("//div[@class='name']/text()")
+    puts names_array
 
-    hero = "abaddon"
+    names_array.each() do |hero|
+      loop_counter = 1
+      puts loop_counter
+      @hcountermodel = HeroCountersModel.new
+      @hcountermodel.name = hero
 
-    hero_img_doc = Nokogiri::HTML(open("http://www.dotabuff.com/heroes/#{hero}"))
-    img = hero_img_doc.xpath("//img[@class='image-avatar image-hero']/@src")
-    image_base = "http://dotabuff.com"
-    uri_name = image_base + img.to_s
+      hero_img_doc = Nokogiri::HTML(open("http://www.dotabuff.com/heroes/#{hero}"))
+      img = hero_img_doc.xpath("//img[@class='image-avatar image-hero']/@src").to_s
+      puts img
+      img.slice!(0)
+      puts img
+      image_base = "http://dotabuff.com/"
+      uri_name = image_base + img
+      puts uri_name
+      img = 'public/images/' + img
+      puts img
 
-
-
-    open(uri_name) { |f|
-      File.open("public/images#{img}", "wb") do |file|
-        file.puts f.write()
+      @hcountermodel.imageurl = img
+      puts uri_name
+      File.open(img, 'wb') do |fo|
+        fo.write(open(uri_name).read)
       end
-    }
+      puts 'we got this far'
+      @hcountermodel.save
+      loop_counter = loop_counter + 1
+      end
 
 
 
-    @hcountermodel.imageurl = img
-    @hcountermodel.save
 
 
 
 
-  end #End of function
+
+
+
+
+    end #End of function
 
 
 
