@@ -9,6 +9,58 @@ This is to show div when user presses the add hero button
 $('div:hidden').first().removeClass("hidden")
 
 -->
+
+<div class="dropdown">
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+    </ul>
+</div>
+
+
+
+
+
+
 <form class="" action="/heroes" method="post">
   <div id="first-row" class="row">
     <input class="col-md-9" list="heroes-list" placeholder="Who is your opponent..." name="one">
@@ -34,9 +86,13 @@ $('div:hidden').first().removeClass("hidden")
   </div>
 
     <!-- Datalist begins here -->
-  <datalist id="heroes-list">
-    <% %>
-  </datalist>
+    <datalist id="heroes-list">
+      <% @heroes.each do |hero| %>
+        <option>
+        <%= hero.name %>
+        </option>
+      <% end %>
+    </datalist>
 
 
 </div>
