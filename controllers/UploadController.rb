@@ -1,5 +1,5 @@
 class UploadController < ApplicationController
-
+# run this class once to populate databse but no more cuz its not needed.
   def uploadDota()
     HeroCountersModel.destroy_all()
 
