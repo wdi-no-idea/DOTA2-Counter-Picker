@@ -8,13 +8,16 @@ class UploadController < ApplicationController
     names_array = heroes_doc.xpath("//div[@class='name']/text()")
     puts names_array
 
+
     names_array.each() do |hero|
       loop_counter = 1
       puts loop_counter
       @hcountermodel = HeroCountersModel.new
       @hcountermodel.name = hero
 
-      hero_img_doc = Nokogiri::HTML(open("http://www.dotabuff.com/heroes/#{hero}"))
+      uri_hero = hero.to_s.downcase.gsub(" ","-").gsub("'","")
+
+      hero_img_doc = Nokogiri::HTML(open("http://www.dotabuff.com/heroes/#{uri_hero}"))
       img = hero_img_doc.xpath("//img[@class='image-avatar image-hero']/@src").to_s
       puts img
       img.slice!(0)
