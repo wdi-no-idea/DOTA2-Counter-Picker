@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'mechanize'
+require 'open-uri'
 Dir.glob('./{controllers,models}/*.rb').each {
   |file| require file
 }
