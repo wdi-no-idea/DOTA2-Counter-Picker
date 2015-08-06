@@ -22,10 +22,12 @@ class UploadController < ApplicationController
       img.slice!(0)
       image_base = "http://dotabuff.com/"
       uri_name = image_base + img
-      img = 'public/images/' + img
+      img_relative_path = 'images/' + img
+      img_absolute_path = 'public/images/' + img
 
-      @hcountermodel.imageurl = img
-      File.open(img, 'wb') do |fo|
+      @hcountermodel.imageurl = img_relative_path
+
+      File.open(img_absolute_path, 'wb') do |fo|
         fo.write(open(uri_name).read)
       end
 
@@ -48,24 +50,25 @@ class UploadController < ApplicationController
     hero_counter_img_array = hero_counter_img_doc.xpath("//section[5]/article/table/tbody/tr/td[@class='cell-icon']/div[@class='image-container image-container-icon image-container-hero']/a/img[@class='image-icon image-hero']/@src")
     countimg_int = 1
     hero_counter_img_array.each() do |item|
-      item = "public/images" + item
+      item = "images" + item
       puts item
       countimg_index = "counterimageurl" + countimg_int.to_s + '='
       @hcountermodel.send(countimg_index, item)
       countimg_int = countimg_int + 1
     end
 
-
-
-
-
-
         @hcountermodel.save
       end # end of loop
-
     end #end of function
 
 
+#--------------------------------------
+# Sorts our database and puts it in a list. Still needs work. Not finished.
+#--------------------------------------
+    def sortDota()
+      ordered_list = HeroCountersModel.order(:name)
+      puts ordered_list
+    end
 
 
 
@@ -81,5 +84,12 @@ class UploadController < ApplicationController
 
   end
 
+#--------------------------------------
+# Dont use this yet...
+#--------------------------------------
+  # get '/sort' do
+  #   self.sortDota
+  #   erb :sorted
+  # end
 
 end

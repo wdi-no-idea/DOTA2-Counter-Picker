@@ -10,89 +10,83 @@ $('div:hidden').first().removeClass("hidden")
 
 -->
 
-<div class="dropdown">
-    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
-    <ul class="dropdown-menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-    </ul>
-</div>
-
-
 
 
 
 
 <form class="" action="/heroes" method="post">
+
   <div id="first-row" class="row">
-    <input class="col-md-9" list="heroes-list" placeholder="Who is your opponent..." name="one">
-      <input class="col-md-3" type="button" name="Add Hero"  value="+"></input>
-  </div>
-  <div class="row hidden">
-    <input class="col-md-9" list="heroes-list" placeholder="Who is your opponent..."  name="two">
-      <input class="col-md-3" type="button" name="Add Hero" value="+"></input>
-  </div>
-  <div id="third-row" class="row" display="none">
-    <input class="col-md-9" list="heroes-list" placeholder="Who is your opponent..." name="three">
-      <input class="col-md-3" type="button" name="Add Hero" value="+"></input>
-  </div>
-  <div id="fourth-row" class="row" display="none">
-    <input class="col-md-9" list="heroes-list" placeholder="Who is your opponent..." name="four">
-      <input class="col-md-3" type="button" name="Add Hero" value="+"></input>
-  </div>
-  <div id="fifth-row" class="row" display="none">
-    <input class="col-md-9" list="heroes-list" placeholder="Who is your opponent..." name="five">
-  </div>
-  <div class="row">
-  <input type="submit" value="Calculate">
+    <div class="col-xs-10">
+      <select class="form-control">
+        <% @heroes.each do |hero| %>
+          <option>
+          <img src="<%=hero.imageurl%>" alt="" />
+          <%= hero.name %>
+          </option>
+        <% end %>
+      </select>
+    </div>
+    <input class="col-xs-2" type="button" name="Add Hero"  value="+"></input>
   </div>
 
-    <!-- Datalist begins here -->
-    <datalist id="heroes-list">
-      <% @heroes.each do |hero| %>
-        <option>
-        <%= hero.name %>
-        </option>
-      <% end %>
-    </datalist>
+  <div id="second-row" class="row hidden" >
+    <div class="col-xs-10">
+      <select class="form-control">
+        <% @heroes.each do |hero| %>
+          <option>
+          <img src="<%=hero.imageurl%>" alt="" />
+          <%= hero.name %>
+          </option>
+        <% end %>
+      </select>
+    </div>
+    <input class="col-xs-2" type="button" name="Add Hero" value="+"></input>
+  </div>
+
+  <div id="third-row" class="row hidden">
+    <div class="col-xs-10">
+      <select class="form-control">
+        <% @heroes.each do |hero| %>
+          <option>
+          <img src="<%=hero.imageurl%>" alt="" />
+          <%= hero.name %>
+          </option>
+        <% end %>
+      </select>
+    </div>
+      <input class="col-xs-2" type="button" name="Add Hero" value="+"></input>
+  </div>
+
+  <div id="fourth-row" class="row hidden" >
+    <div class="col-xs-10">
+      <select class="form-control">
+        <% @heroes.each do |hero| %>
+          <option>
+          <img src="<%=hero.imageurl%>" alt="" />
+          <%= hero.name %>
+          </option>
+        <% end %>
+      </select>
+    </div>
+      <input class="col-xs-2" type="button" name="Add Hero" value="+"></input>
+  </div>
+
+  <div id="fifth-row" class="row hidden" >
+    <div class="col-xs-12">
+      <select class="form-control">
+        <% @heroes.each do |hero| %>
+          <option>
+          <img src="<%=hero.imageurl%>" alt="" />
+          <%= hero.name %>
+          </option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+  <input class="col-xs-6 col-xs-offset-3" type="submit" value="Calculate">
+  </div>
 
 
 </div>
