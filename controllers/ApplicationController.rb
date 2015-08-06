@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
   #This checks if the user is currently authenticated
   def is_not_authenticated?
     #if yes, it is not, nil else false
-    session[:user].nil?
+    session[:user_name].nil?
   end
 #-------------------------------------------------------
   set :views, File.expand_path('../../views',__FILE__)

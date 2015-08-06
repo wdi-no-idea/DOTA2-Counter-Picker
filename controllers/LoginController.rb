@@ -24,15 +24,21 @@ class LoginController < ApplicationController
 
       if user.password_hash == BCrypt::Engine.hash_secret(params[:password], user.password_salt)
         session[:user_name] = user
-        erb :'heroes_views/heroes_index'
+        puts "good password"
+        redirect  '/heroes'
+        puts "tried"
       end
+
     end
+    puts "bad password"
     erb :'login_views/login_fail'
   end
 
   #Add a route for logging out and setting the session to nil
     #------------------------------------------
     get '/logout' do
+      puts "I hit the logout in the LC"
+      puts params[:user_name]
       session[:user_name] = nil
       redirect '/'
     end

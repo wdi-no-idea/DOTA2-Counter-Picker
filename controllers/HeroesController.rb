@@ -14,7 +14,7 @@ class HeroesController < ApplicationController
 
     if is_not_authenticated? == false
       @heroes = HeroCountersModel.all
-      redirect '/'
+      erb :'heroes_views/heroes_index'
     else
       redirect 'login/'
     end
@@ -24,9 +24,12 @@ class HeroesController < ApplicationController
   post '/' do
     if is_not_authenticated? == false
       @heroes = HeroCountersModel.all
-      erb :'heroes_views/heroes_index'
+      puts " HC post return to heroes_index as a post"
+      return erb :'heroes_views/good'
+
     else
-      erb :'login_views/login_index'
+      puts "HC login error"
+      return erb :'login_views/login_index'
     end
   end
 
