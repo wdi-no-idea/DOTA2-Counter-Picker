@@ -6,7 +6,7 @@ p, small {
   color: rgba(142,119,105,1);
 }
 
-header, footer, section {
+.row {
   background-color: rgba(0,0,0,.6);
 }
 
@@ -14,7 +14,9 @@ h2, h4, p {
   text-align: center;
 }
 
-
+hr {
+  width: 100%;
+}
 ul {
 margin-top: 30px;
 text-align: right;

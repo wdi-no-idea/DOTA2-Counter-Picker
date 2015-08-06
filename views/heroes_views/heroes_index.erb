@@ -1,15 +1,7 @@
 <h2>Who are you playing against?</h2>
-<div class="container">
 
-<!--
-
-This is to show div when user presses the add hero button
-
-$('div:hidden').first().removeClass("hidden")
-
--->
 <% @heroes = HeroCountersModel.all %>
-<form class="" action="/heroes" method="post">
+<form class="row form-horizontal" action="/heroes" method="post">
 
   <div id="first-row" class="row">
     <div class="col-xs-10">
@@ -23,7 +15,7 @@ $('div:hidden').first().removeClass("hidden")
         <% end %>
       </select>
     </div>
-    <input class="col-xs-2 add-button" type="button" name="Add Hero"  value="+"></input>
+        <input class="col-xs-2 add-button" type="button" name="Add Hero"  value="+"></input>
   </div>
 <!-- ______________________________________ -->
   <div id="second-row" class="row hidden" >
@@ -89,6 +81,4 @@ $('div:hidden').first().removeClass("hidden")
   <div class="row">
   <input class="col-xs-6 col-xs-offset-3" type="submit" value="Calculate">
   </div>
-
-
-</div>
+</form>
