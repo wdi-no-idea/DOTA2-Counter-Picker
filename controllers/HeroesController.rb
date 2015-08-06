@@ -24,13 +24,28 @@ class HeroesController < ApplicationController
   post '/' do
     if is_not_authenticated? == false
       @heroes = HeroCountersModel.all
-      puts " HC post return to heroes_index as a post"
-      return erb :'heroes_views/good'
+      #--------------------------------
+      #actual controller
+      @hero_1 = params[:hero_1]
+      @hero_2 = params[:hero_2]
+      @hero_3 = params[:hero_3]
+      @hero_4 = params[:hero_4]
+      @hero_5 = params[:hero_5]
+      @heroes_list = [@hero_1, @hero_2, @hero_3, @hero_4, @hero_5]
 
+
+
+
+      #--------------------------------
+      return erb :'heroes_views/heroes_results'
     else
-      puts "HC login error"
-      return erb :'login_views/login_index'
+      redirect 'login/'
     end
   end
 
-end
+
+
+
+
+
+end # class end

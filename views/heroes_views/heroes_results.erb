@@ -1,0 +1,48 @@
+<section class="row">
+  <h2>Results Page</h2>
+</section>
+
+<% @heroes_list = @heroes_list.select{|string| string !="--Please Select Hero--"} %>
+<% @heroes_list.each do |hero| %>
+<% hero = HeroCountersModel.find_by name: hero %>
+
+<section class="row">
+  <article class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5">
+    <h4>Your Hero</h4>
+    <p><%= hero.name %></p>
+    <img src="<%= hero.imageurl %>" class="img-responsive" alt="" />
+  </article>
+</section>
+
+<section class="row">
+  <article class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-1 ">
+    <h4>Counter 1</h4>
+    <p><%= hero.counter1 %></p>
+    <img src="<%= hero.counterimageurl1 %>" class="img-responsive" alt="" />
+  </article>
+
+  <article class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0">
+    <h4>Counter 2</h4>
+    <p><%= hero.counter2 %></p>
+    <img src="  <%= hero.counterimageurl2 %>" class="img-responsive" alt="" />
+  </article>
+
+  <article class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0">
+    <h4>Counter 3</h4>
+    <p><%= hero.counter3 %></p>
+    <img src="<%= hero.counterimageurl3 %>" class="img-responsive" alt="" />
+  </article>
+
+  <article class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0">
+    <h4>Counter 4</h4>
+    <p><%= hero.counter4 %></p>
+    <img src="<%= hero.counterimageurl4 %>" class="img-responsive" alt="" />
+  </article>
+
+  <article class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0">
+  <h4>Counter 5</h4>
+    <p><%= hero.counter5 %></p>
+    <img src="<%= hero.counterimageurl5 %>" class="img-responsive" alt="" />
+  </article>
+</section>
+<% end %>

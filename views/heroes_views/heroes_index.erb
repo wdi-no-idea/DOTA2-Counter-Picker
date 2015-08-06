@@ -13,7 +13,8 @@ $('div:hidden').first().removeClass("hidden")
 
   <div id="first-row" class="row">
     <div class="col-xs-10">
-      <select class="form-control">
+      <select class="form-control" name="hero_1" value="enter a hero..">
+        <option selected='selected'>--Please Select Hero--</option>
         <% @heroes.each do |hero| %>
           <option>
           <img src="<%=hero.imageurl%>" alt="" />
@@ -27,7 +28,8 @@ $('div:hidden').first().removeClass("hidden")
 <!-- ______________________________________ -->
   <div id="second-row" class="row hidden" >
     <div class="col-xs-10">
-      <select class="form-control">
+      <select class="form-control" name="hero_2" value="enter a hero..">
+        <option selected='selected'>--Please Select Hero--</option>
         <% @heroes.each do |hero| %>
           <option>
           <img src="<%=hero.imageurl%>" alt="" />
@@ -41,7 +43,8 @@ $('div:hidden').first().removeClass("hidden")
 <!-- ______________________________________ -->
   <div id="third-row" class="row hidden">
     <div class="col-xs-10">
-      <select class="form-control">
+      <select class="form-control" name="hero_3" value="enter a hero..">
+        <option selected='selected'>--Please Select Hero--</option>
         <% @heroes.each do |hero| %>
           <option>
           <img src="<%=hero.imageurl%>" alt="" />
@@ -55,7 +58,8 @@ $('div:hidden').first().removeClass("hidden")
 <!-- ______________________________________ -->
   <div id="fourth-row" class="row hidden" >
     <div class="col-xs-10">
-      <select class="form-control">
+      <select class="form-control" name="hero_4" value="enter a hero..">
+        <option selected='selected'>--Please Select Hero--</option>
         <% @heroes.each do |hero| %>
           <option>
           <img src="<%=hero.imageurl%>" alt="" />
@@ -69,7 +73,10 @@ $('div:hidden').first().removeClass("hidden")
 <!-- ______________________________________ -->
   <div id="fifth-row" class="row hidden" >
     <div class="col-xs-10">
-      <select class="form-control">
+      <select class="form-control" name="hero_5" placeholder="enter a hero..">
+
+        <option selected='selected'>--Please Select Hero--</option>
+
         <% @heroes.each do |hero| %>
           <option>
           <img src="<%=hero.imageurl%>" alt="" />

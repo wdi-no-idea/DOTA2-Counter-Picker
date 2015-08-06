@@ -1,3 +1,41 @@
+h1, h2, h3, h4, h5, h6 {
+  color: rgba(233,44,31,1);
+}
+
+p, small {
+  color: rgba(142,119,105,1);
+}
+
+header, footer, section {
+  background-color: rgba(0,0,0,.6);
+}
+
+h2, h4, p {
+  text-align: center;
+}
+
+
+ul {
+margin-top: 30px;
+text-align: right;
+}
+
+li {
+  display: inline;
+}
+
+
+
 .hidden {
   display: none;
+}
+
+.wrapper article {
+  display:inline;
+}
+
+body {
+  background-image: url(/images/RadiantFountain.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
