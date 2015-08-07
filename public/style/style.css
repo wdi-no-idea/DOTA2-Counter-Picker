@@ -6,7 +6,7 @@ p, small {
   color: rgba(142,119,105,1);
 }
 
-.row {
+header, footer, #body {
   background-color: rgba(0,0,0,.6);
 }
 
@@ -19,7 +19,13 @@ a:link, a:visited {
 a:link:active, a:visited:active {
     color: rgba(142,119,105,1);
 }
+img {
+  margin: 0 auto;
+}
+#body {
+  height: 500px;
 
+}
 
 h2, h4, p {
   text-align: center;

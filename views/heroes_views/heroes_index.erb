@@ -5,7 +5,7 @@
 <% @heroes = HeroCountersModel.all %>
 <form class="row form-horizontal" action="/heroes" method="post">
 <!-- __________________1___________________ -->
-  <div id="first-row" class="col-xs-10">
+  <div id="first-row" class="col-xs-10 margin-left-15">
     <select class="form-control" name="hero_1">
       <option selected='selected'>--Please Select Hero--</option>
       <% @heroes.each do |hero| %>
@@ -17,7 +17,7 @@
     </select>
   </div>
 
-  <div class="col-xs-2">
+  <div class="col-xs-2 margin-right-15">
     <input class="add-button col-xs-12" type="button" name="Add Hero"  value="+"></input>
   </div>
 <!-- _________________2____________________ -->
@@ -84,6 +84,7 @@
 
   <div class="col-xs-6 col-xs-offset-3">
     <input class="col-xs-12" type="submit" value="Calculate">
+    <br><br><br>
   </div>
 
 </form>
