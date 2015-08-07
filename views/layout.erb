@@ -18,9 +18,13 @@
         <nav class="col-xs-12 col-sm-6 .nav">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/login/logout">Logout</a></li>
             <li><a href="/heroes">Heroes</a></li>
+
+            <% if session[:user_name].nil? %>
+              <li><a href='/login'>Login</a></li>
+              <% else %>
+              <li><a href='/login/logout'>Logout</a></li>
+            <% end %>
           </ul>
         </nav>
         <hr>

@@ -5,6 +5,7 @@ $(document).ready(function() {
     $(this).removeClass("add-button");
     $(this).prop("disabled", true);
     $(".hidden").first().removeClass("hidden");
+    $(".hidden").first().removeClass("hidden");
     add_button = $(".add-button").first();
   });
 

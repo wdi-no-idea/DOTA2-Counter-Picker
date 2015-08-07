@@ -10,6 +10,17 @@ p, small {
   background-color: rgba(0,0,0,.6);
 }
 
+a:link, a:visited {
+    color: rgba(142,119,105,1);
+    text-decoration: none;
+    cursor: auto;
+}
+
+a:link:active, a:visited:active {
+    color: rgba(142,119,105,1);
+}
+
+
 h2, h4, p {
   text-align: center;
 }
@@ -25,8 +36,6 @@ text-align: right;
 li {
   display: inline;
 }
-
-
 
 .hidden {
   display: none;

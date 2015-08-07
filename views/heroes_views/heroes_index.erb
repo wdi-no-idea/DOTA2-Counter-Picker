@@ -1,84 +1,89 @@
-<h2>Who are you playing against?</h2>
+<section class="row">
+  <h2>Who are you playing against?</h2>
+</section>
 
 <% @heroes = HeroCountersModel.all %>
 <form class="row form-horizontal" action="/heroes" method="post">
+<!-- __________________1___________________ -->
+  <div id="first-row" class="col-xs-10">
+    <select class="form-control" name="hero_1">
+      <option selected='selected'>--Please Select Hero--</option>
+      <% @heroes.each do |hero| %>
+        <option>
+        <img src="<%=hero.imageurl%>" alt="" />
+        <%= hero.name %>
+        </option>
+      <% end %>
+    </select>
+  </div>
 
-  <div id="first-row" class="row">
-    <div class="col-xs-10">
-      <select class="form-control" name="hero_1" value="enter a hero..">
-        <option selected='selected'>--Please Select Hero--</option>
-        <% @heroes.each do |hero| %>
-          <option>
-          <img src="<%=hero.imageurl%>" alt="" />
-          <%= hero.name %>
-          </option>
-        <% end %>
-      </select>
-    </div>
-        <input class="col-xs-2 add-button" type="button" name="Add Hero"  value="+"></input>
+  <div class="col-xs-2">
+    <input class="add-button col-xs-12" type="button" name="Add Hero"  value="+"></input>
   </div>
-<!-- ______________________________________ -->
-  <div id="second-row" class="row hidden" >
-    <div class="col-xs-10">
-      <select class="form-control" name="hero_2" value="enter a hero..">
-        <option selected='selected'>--Please Select Hero--</option>
-        <% @heroes.each do |hero| %>
-          <option>
-          <img src="<%=hero.imageurl%>" alt="" />
-          <%= hero.name %>
-          </option>
-        <% end %>
-      </select>
-    </div>
-    <input class="col-xs-2 add-button" type="button" name="Add Hero" value="+"></input>
+<!-- _________________2____________________ -->
+  <div id="second-row" class="col-xs-10 hidden">
+    <select class="form-control" name="hero_2">
+      <option selected='selected'>--Please Select Hero--</option>
+      <% @heroes.each do |hero| %>
+        <option>
+        <img src="<%=hero.imageurl%>" alt="" />
+        <%= hero.name %>
+        </option>
+      <% end %>
+    </select>
   </div>
-<!-- ______________________________________ -->
-  <div id="third-row" class="row hidden">
-    <div class="col-xs-10">
-      <select class="form-control" name="hero_3" value="enter a hero..">
-        <option selected='selected'>--Please Select Hero--</option>
-        <% @heroes.each do |hero| %>
-          <option>
-          <img src="<%=hero.imageurl%>" alt="" />
-          <%= hero.name %>
-          </option>
-        <% end %>
-      </select>
-    </div>
-      <input class="col-xs-2 add-button" type="button" name="Add Hero" value="+"></input>
-  </div>
-<!-- ______________________________________ -->
-  <div id="fourth-row" class="row hidden" >
-    <div class="col-xs-10">
-      <select class="form-control" name="hero_4" value="enter a hero..">
-        <option selected='selected'>--Please Select Hero--</option>
-        <% @heroes.each do |hero| %>
-          <option>
-          <img src="<%=hero.imageurl%>" alt="" />
-          <%= hero.name %>
-          </option>
-        <% end %>
-      </select>
-    </div>
-      <input class="col-xs-2 add-button" type="button" name="Add Hero" value="+"></input>
-  </div>
-<!-- ______________________________________ -->
-  <div id="fifth-row" class="row hidden" >
-    <div class="col-xs-10">
-      <select class="form-control" name="hero_5" placeholder="enter a hero..">
 
-        <option selected='selected'>--Please Select Hero--</option>
+  <div class="col-xs-2 hidden">
+    <input class="add-button col-xs-12" type="button" name="Add Hero"  value="+"></input>
+  </div>
+<!-- _________________3____________________ -->
+  <div id="third-row" class="col-xs-10 hidden">
+    <select class="form-control" name="hero_3">
+      <option selected='selected'>--Please Select Hero--</option>
+      <% @heroes.each do |hero| %>
+        <option>
+        <img src="<%=hero.imageurl%>" alt="" />
+        <%= hero.name %>
+        </option>
+      <% end %>
+    </select>
+  </div>
 
-        <% @heroes.each do |hero| %>
-          <option>
-          <img src="<%=hero.imageurl%>" alt="" />
-          <%= hero.name %>
-          </option>
-        <% end %>
-      </select>
-    </div>
+  <div class="col-xs-2 hidden">
+    <input class="add-button col-xs-12" type="button" name="Add Hero"  value="+"></input>
   </div>
-  <div class="row">
-  <input class="col-xs-6 col-xs-offset-3" type="submit" value="Calculate">
+<!-- _________________4____________________ -->
+  <div id="fourth-row" class="col-xs-10 hidden">
+    <select class="form-control" name="hero_4">
+      <option selected='selected'>--Please Select Hero--</option>
+      <% @heroes.each do |hero| %>
+        <option>
+        <img src="<%=hero.imageurl%>" alt="" />
+        <%= hero.name %>
+        </option>
+      <% end %>
+    </select>
   </div>
+
+  <div class="col-xs-2 hidden">
+    <input class="add-button col-xs-12" type="button" name="Add Hero"  value="+"></input>
+  </div>
+<!-- ________________5_____________________ -->
+  <div id="fifth-row" class="col-xs-10 hidden">
+    <select class="form-control" name="hero_5">
+      <option selected='selected'>--Please Select Hero--</option>
+      <% @heroes.each do |hero| %>
+        <option>
+        <img src="<%=hero.imageurl%>" alt="" />
+        <%= hero.name %>
+        </option>
+      <% end %>
+    </select>
+  </div>
+
+
+  <div class="col-xs-6 col-xs-offset-3">
+    <input class="col-xs-12" type="submit" value="Calculate">
+  </div>
+
 </form>
