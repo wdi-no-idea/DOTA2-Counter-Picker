@@ -56,3 +56,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+#login_page {
+  text-align: left;
+}
