@@ -38,7 +38,7 @@ class UploadController < ApplicationController
 
 
     hero_counter_doc = Nokogiri::HTML(open("http://www.dotabuff.com/heroes/#{uri_hero}"))
-    hero_counter_array = hero_counter_doc.xpath("//section[5]/article/table/tbody/tr/td[2]/a[@class='link-type-hero']/text()")
+    hero_counter_array = hero_counter_doc.xpath("//section[6]/article/table/tbody/tr/td[2]/a[@class='link-type-hero']/text()")
     count_int = 1
     hero_counter_array.each() do |item|
       count_index = 'counter' + count_int.to_s + '='
@@ -47,7 +47,7 @@ class UploadController < ApplicationController
     end
     # Add the counter image from 1 to 8 for the hero
     hero_counter_img_doc = Nokogiri::HTML(open("http://www.dotabuff.com/heroes/#{uri_hero}"))
-    hero_counter_img_array = hero_counter_img_doc.xpath("//section[5]/article/table/tbody/tr/td[@class='cell-icon']/div[@class='image-container image-container-icon image-container-hero']/a/img[@class='image-icon image-hero']/@src")
+    hero_counter_img_array = hero_counter_img_doc.xpath("//section[6]/article/table/tbody/tr/td[@class='cell-icon']/div[@class='image-container image-container-icon image-container-hero']/a/img[@class='image-icon image-hero']/@src")
     countimg_int = 1
     hero_counter_img_array.each() do |item|
       item = "images" + item
